@@ -1,0 +1,28 @@
+#banner{
+    text-align:center;
+    position:relative;
+    .title-wrapper{
+        background: #ebebeb;
+        padding:15px 0;
+    }
+
+    img{
+        height: 25vw;
+        width: 100vw;
+        object-fit: cover;
+        opacity: 0.5;
+    
+    }
+
+    .heading{
+        background: #ebebeb;
+        font-size: 30px;
+        font-family: $mainFont;
+    }
+}
+
+.intro{
+    margin-top:20px;
+    text-align:center;
+}
+

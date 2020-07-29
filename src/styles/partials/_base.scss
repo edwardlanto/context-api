@@ -1,0 +1,37 @@
+*{
+    font-family: $mainFont;
+    font-size: $baseFontSize;
+}
+
+body{
+    margin:0;
+}
+
+h1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    font-size:30px;
+}
+
+img {
+    width: 100%;
+}
+
+p {
+    font-size: $baseFontSize;
+    margin: 0;
+    line-height: 34px;
+}
+
+.container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+@media (min-width:1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
