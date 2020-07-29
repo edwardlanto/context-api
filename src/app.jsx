@@ -4,15 +4,29 @@ import Page from './components/Page';
 import Home from './components/Home';
 import { PhoneProvider } from './components/contexts/PhoneContext';
 import './styles/partials/main.scss';
+import { AnimatedSwitch, spring } from 'react-router-transition';
+
+
+function bounce(val) {
+	return spring(val, {
+		stiffness: 300,
+		damping: 40
+	});
+}
 
 const App = () => (
 	<div>
 		<Router>
 			<PhoneProvider>
-				<Switch>
+				<AnimatedSwitch
+					atEnter={{ opacity: 0 }}
+					atActive={{ opacity: bounce(1) }}
+					atLeave={{ opacity: bounce(1) }}
+					className="switch-wrapper"
+				>
 					<Route path="/page" component={Page} />
 					<Route path="/" component={Home} />
-				</Switch>
+				</AnimatedSwitch>
 			</PhoneProvider>
 		</Router>
 	</div>
