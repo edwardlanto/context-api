@@ -4,7 +4,7 @@ form{
         border: 1px solid #027a01;
         border-bottom-width: 6px;
         padding: 5px 20px;
-        border-radius: 3px;
+        border-radius: 30px;
         margin:20px 0;
         &::placeholder{
             text-align:center;
@@ -12,26 +12,13 @@ form{
     }
 
     button[type="submit"]{
-        background: #28ae65;
-        width: 280px;
-        justify-content:center;
-        display:flex;
-        align-items:center;
-        color:#fff;
-        position:relative;
-        margin-top:25px;
-        margin:25px auto;
-        height:50px;
-        padding:5px 10px;
+        background: #fc4704;
+        display: block;
         margin: 0 auto;
-        font-size:25px;
-
-        img{
-            height:46px;
-            width:auto;
-            position:absolute;
-            left:0px;
-        }
+        border: none;
+        padding: 5px 20px;
+        border-radius: 30px;
+        border-bottom: 3px solid #822300;
     }
     
     @media (min-width:1024px){

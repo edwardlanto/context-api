@@ -45,8 +45,11 @@ module.exports = {
           loader: 'html-loader',
           options: { minimize: true }
         }
-      }
-    ]
+      },
+      {
+        test: /\.css$/,
+        loader: "style-loader!css-loader"
+      }    ]
   },
   resolve: {
     extensions: ['.js', '.jsx']
