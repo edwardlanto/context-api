@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
 *{
     font-family: $mainFont;
@@ -30,41 +29,25 @@ p {
     line-height: 34px;
 }
 
-.container {
-    margin: 0 auto;
-    text-align: center;
+.button{
+  background: #fc4704;
+  display: block;
+  margin: 0 auto;
+  max-width:150px;
+  text-decoration:none;
+  border: none;
+  padding: 5px 20px;
+  border-radius: 30px;
+  border-bottom: 3px solid #822300;
 }
 
-/* back */
-.back-enter {
-    transform: translateX(-100%);
-  }
-  .back-enter-active {
-    transform: translateX(0);
-  }
-  .back-exit {
-    transform: translateX(0);
-  }
-  .back-exit-active {
-    transform: translate(100%);
-  }
-   
-  /* next */
-  .next-enter {
-    transform: translateX(100%);
-  }
-  .next-enter-active {
-    transform: translateX(0);
-  }
-  .next-exit {
-    transform: translateX(0);
-  }
-  .next-exit-active {
-    transform: translateX(-100%);
-  }
+button, input:focus {
+  outline:0;
+}
+
 
 @media (min-width:1024px){
   .container{
-    max-width: 1024px;
+    text-align: center;
   }
 }

@@ -23,7 +23,7 @@ const Form = (props) => {
 	return (
 		<form name="main-form" onSubmit={add}>
 			<input type="text" className="phone" onChange={handleNumber} placeholder="Phone Number" />
-			<button type="submit">Submit</button>
+			<button type="submit" className="button">Submit</button>
 		</form>
 	);
 };

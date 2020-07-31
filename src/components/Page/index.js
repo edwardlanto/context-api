@@ -10,9 +10,9 @@ const Page = () => {
 	return (
 		<div>
 			<Banner title={title} heading={heading} />
-			<div>
+			<div class="container">
 				<p>Your phone number is: {value[0] ? value[0]: 'Not available right now'}</p>
-				<Link to="/">Go Back</Link>
+				<Link to="/" className="button">Go Back</Link>
 			</div>
 		</div>
 	)

@@ -1,23 +1,26 @@
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
-const devMode = process.env.NODE_ENV !== 'production';
-const SRC_DIR = __dirname + '/src';
-const DIST_DIR = __dirname + '/dist';
 
 module.exports = {
-  entry: [
-    SRC_DIR + '/index.jsx'
-  ],
-  output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+  entry: './src/index.js',
+  devServer: {
+    port: 9000,
+    contentBase: path.join(__dirname, 'dist'),
+  },
+  devtool: false,
+  performance: {
+    maxAssetSize: 100000,
+    maxEntrypointSize: 100000,
+    hints: "warning"
+  },
+  resolve: {
+    extensions: ['*', '.js', '.jsx']
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader'
@@ -48,23 +51,20 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: "style-loader!css-loader"
-      }    ]
-  },
-  resolve: {
-    extensions: ['.js', '.jsx']
+        loaders:['style-loader', 'css-loader', 'sass-loader']
+      },
+    ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: SRC_DIR + '/index.html',
-      filename: './index.html',
-    })
+      template: "./src/index.html",
+      filename: "./index.html"
+    }),
+    new CleanWebpackPlugin()
   ],
-  devServer: {
-    contentBase: DIST_DIR,
-    hot: true,
-    port: 9000,
-    historyApiFallback: true
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'bundle.js'
   }
 };
+
