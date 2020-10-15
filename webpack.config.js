@@ -5,8 +5,6 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     port: 9000,
-    historyApiFallback: true,
-    contentBase: process.env.PUBLIC_URL,
     hot: true
   },
   devtool: false,
