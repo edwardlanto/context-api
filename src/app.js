@@ -7,7 +7,7 @@ import './styles/partials/main.scss';
 
 const App = () => (
 	<div>
-		<Router>
+		<Router basename={process.env.PUBLIC_URL}>
 			<PhoneProvider>
 				<Switch>
 					<Route path="/page" component={Page} />
