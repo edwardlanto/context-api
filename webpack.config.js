@@ -5,7 +5,9 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     port: 9000,
-    contentBase: path.join(__dirname, 'build'),
+    historyApiFallback: true,
+    contentBase: './',
+    hot: true
   },
   devtool: false,
   resolve: {
