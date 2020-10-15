@@ -7,7 +7,7 @@ import './styles/partials/main.scss';
 
 const App = () => (
 	<div>
-		<HashRouter basename="/">
+		<HashRouter>
 			<PhoneProvider>
 				<Switch>
 					<Route path="/page" component={Page} />
