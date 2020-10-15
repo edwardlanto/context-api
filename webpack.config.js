@@ -6,14 +6,9 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     port: 9000,
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'build'),
   },
   devtool: false,
-  performance: {
-    maxAssetSize: 100000,
-    maxEntrypointSize: 100000,
-    hints: "warning"
-  },
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
@@ -63,7 +58,7 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, 'build'),
     filename: 'bundle.js'
   }
 };
