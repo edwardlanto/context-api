@@ -2,15 +2,16 @@ import React, { useState, useContext } from 'react';
 import { PhoneContext } from '../contexts/PhoneContext';
 
 const Form = (props) => {
-	const [ phoneNumber, setNumber ] = useState('');
+	const [ phoneNumber, setNumber ] = useState(() => '');
 	const [ phone, setPhone ] = useContext(PhoneContext);
-	console.log('props', props);
 	const handleNumber = (e) => {
 		setNumber(e.target.value);
 	};
 
 	const add = (e) => {
 		e.preventDefault();
+
+		// Check if its a phone number
 		let reg = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(phoneNumber);
 		if (reg === true) {
 			setPhone(() => phoneNumber);
