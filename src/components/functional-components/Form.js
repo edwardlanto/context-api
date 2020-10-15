@@ -15,7 +15,7 @@ const Form = (props) => {
 		let reg = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(phoneNumber);
 		if (reg === true) {
 			setPhone(() => phoneNumber);
-			props.functions.history.push('/page');
+			props.functions.history.push('./page');
 		} else {
 			props.toast(true);
 		};
