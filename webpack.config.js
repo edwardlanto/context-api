@@ -6,7 +6,7 @@ module.exports = {
   devServer: {
     port: 9000,
     historyApiFallback: true,
-    contentBase: '/',
+    contentBase: process.env.PUBLIC_URL,
     hot: true
   },
   devtool: false,
