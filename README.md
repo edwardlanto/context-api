@@ -1,14 +1,23 @@
 # React : Babel + Webpack + Sass boilerplate application
 
 
-Source code for the tutorial published on https://blog.marcnuri.com/react-babel-webpack-sass-application/
+Learned from https://blog.marcnuri.com/react-babel-webpack-sass-application/
 
-The tutorial shows how to install all node dependencies and how to setup Webpack 4 and Babel to create a basic React application. The last section shows how to add support for Sass (SCSS) using global styles and per component styles using CSS modules.
+You can visit the application here [http://edwardlanto.github.io/context-api](http://edwardlanto.github.io/context-api)
 
-Please feel free to leave any comments or suggestions in the blog page:
- * [English](https://blog.marcnuri.com/react-babel-webpack-sass-application/)
- * [Spanish](https://blog.marcnuri.com/react-babel-webpack-sass-aplicacion-basica/)
-# contextapi-webpack
-# contextapi-webpack
-# context-api
-# context-api
+I used this starter to as scaffold a simple React form application. I added different file types than the example and added the appropriate loaders. Hot reloading is enabled along with recommend babel transformers to transpile ES6 code to something all browsers can understand.
+
+## Run the app
+
+It is currently running at Github.
+
+You can also run it locally. Just clone this repo.
+
+https://github.com/edwardlanto/context-api.git
+
+Next, run:
+
+`
+    npm install --save-dev
+    npm start
+`

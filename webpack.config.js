@@ -1,5 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const SRC_DIR = __dirname + '/src';
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -7,7 +11,6 @@ module.exports = {
     port: 9000,
     hot: true
   },
-  devtool: false,
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },
@@ -50,10 +53,20 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+
+    // Spit out HTML from bundles webpack assets
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'public', 'index.html'),
-      filename: 'index.html'
-    })
+      template: SRC_DIR + '/index.html',
+      filename: './index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css'
+    }),
+
+    // Cleans up dist on every build
+     new CleanWebpackPlugin()
   ],
   output: {
     path: path.join(__dirname, 'build'),
